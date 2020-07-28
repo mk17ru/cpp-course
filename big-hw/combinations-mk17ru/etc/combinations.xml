@@ -1,0 +1,1059 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<combinations>
+
+    <!-- Futures Combinations, different underlyings, same expiration. -->
+
+    <combination name="Inter commodity spread" shortname="ICS" identifier="832c4a6e-bd64-11e2-a706-f9d5a0549fe0">
+        <legs cardinality="fixed">
+            <leg type="F" ratio="1" expiration="X"/>
+            <leg type="F" ratio="-1" expiration="X"/>
+        </legs>
+    </combination>
+
+    <!-- Futures Combinations, all in the same underlying. -->
+
+    <combination name="Future calendar spread" shortname="FCS" identifier="d2e5b922-575b-11df-bcaa-5b4c80ccc924">
+        <legs cardinality="fixed">
+            <leg type="F" ratio="1" expiration="X"/>
+            <leg type="F" ratio="-1" expiration="Y"/>
+        </legs>
+    </combination>
+
+    <combination name="Future butterfly" shortname="FB" identifier="d45880f0-575b-11df-bc39-ebffbea5b361">
+        <legs cardinality="fixed">
+            <leg type="F" ratio="1"/>
+            <leg type="F" ratio="-2" expiration_offset="+"/>
+            <leg type="F" ratio="1" expiration_offset="++"/>
+        </legs>
+    </combination>
+
+    <combination name="Future condor" shortname="FCo" identifier="d4efcc6c-575b-11df-83b2-61b63d9de8e6">
+        <legs cardinality="fixed">
+            <leg type="F" ratio="1"/>
+            <leg type="F" ratio="-1" expiration_offset="+"/>
+            <leg type="F" ratio="-1" expiration_offset="++"/>
+            <leg type="F" ratio="1" expiration_offset="+++"/>
+        </legs>
+    </combination>
+
+    <combination name="Pack" shortname="FP" identifier="d59f3fee-575b-11df-80f3-4999e81f48b7">        <!-- *** -->
+        <legs cardinality="fixed">
+            <leg type="F" ratio="1"/>
+            <leg type="F" ratio="1" expiration_offset="1q"/>
+            <leg type="F" ratio="1" expiration_offset="2q"/>
+            <leg type="F" ratio="1" expiration_offset="3q"/>
+        </legs>
+    </combination>
+
+    <combination name="Bundle" shortname="FBu" identifier="d5de5684-575b-11df-98c2-858db0535f77">     <!-- *** -->
+        <legs cardinality="multiple">
+            <leg type="F" ratio="1"/>
+            <leg type="F" ratio="1" expiration_offset="1q"/>
+            <leg type="F" ratio="1" expiration_offset="2q"/>
+            <leg type="F" ratio="1" expiration_offset="3q"/>
+        </legs>
+    </combination>
+
+    <combination name="Strip" shortname="FST" identifier="d54c8d4e-575b-11df-87fa-b18f0b7bb14e">     <!-- *** -->
+        <legs cardinality="more" mincount="2">
+            <leg type="F" ratio="+"/>
+        </legs>
+    </combination>
+
+    <!-- Options Combinations, all in the same underlying -->
+
+    <combination name="Jelly roll" shortname="JR" identifier="d60e378c-575b-11df-80da-6b7a129b2e6e">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="-1" strike="X" expiration="X"/>
+            <leg type="P" ratio="1" strike="X" expiration="X"/>
+            <leg type="C" ratio="1" strike="Y" expiration_offset="+"/>
+            <leg type="P" ratio="-1" strike="Y" expiration_offset="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Call butterfly" shortname="CB" identifier="84326d36-6997-11df-9b02-53278935aea1">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" expiration="X"/>
+            <leg type="C" ratio="-2" expiration="X" strike_offset="+"/>
+            <leg type="C" ratio="1" expiration="X" strike_offset="++"/>
+        </legs>
+    </combination>
+
+    <combination name="Call calendar butterfly" shortname="CCB" identifier="9ceef5e0-46c7-11e3-bf68-d7f6eb7a5d73">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" strike="X"/>
+            <leg type="C" ratio="-2" expiration_offset="+" strike="X"/>
+            <leg type="C" ratio="1" expiration_offset="++" strike="X"/>
+        </legs>
+    </combination>
+
+    <combination name="Skinny call butterfly" shortname="SCB" identifier="d40c4012-4058-11e2-9e42-15f1cfe99412">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" expiration="X"/>
+            <leg type="C" ratio="-1" expiration="X" strike_offset="+"/>
+            <leg type="C" ratio="1" expiration="X" strike_offset="++"/>
+        </legs>
+    </combination>
+
+    <combination name="Put butterfly" shortname="PB" identifier="d6378a10-575b-11df-bf2a-5b9fe7473ef5">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1" expiration="X"/>
+            <leg type="P" ratio="-2" expiration="X" strike_offset="+"/>
+            <leg type="P" ratio="1" expiration="X" strike_offset="++"/>
+        </legs>
+    </combination>
+
+    <combination name="Put calendar butterfly" shortname="PCB" identifier="c53cf542-46c7-11e3-b146-86241b7145b3">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1" strike="X"/>
+            <leg type="P" ratio="-2" expiration_offset="+" strike="X"/>
+            <leg type="P" ratio="1" expiration_offset="++" strike="X"/>
+        </legs>
+    </combination>
+
+    <combination name="Skinny put butterfly" shortname="SPB" identifier="dfb1af38-4058-11e2-af2c-0b5c4a040bf8">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1" expiration="X"/>
+            <leg type="P" ratio="-1" expiration="X" strike_offset="+"/>
+            <leg type="P" ratio="1" expiration="X" strike_offset="++"/>
+        </legs>
+    </combination>
+
+    <combination name="Call spread" shortname="CS" identifier="d66d894e-575b-11df-aa9c-29eced234898">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" expiration="X"/>
+            <leg type="C" ratio="-1" expiration="X" strike_offset="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Put spread" shortname="PS" identifier="d69d460c-575b-11df-b797-6fa7e19cbce1">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1" expiration="X"/>
+            <leg type="P" ratio="-1" expiration="X" strike_offset="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Call calendar spread" shortname="CCS" identifier="d6cc31d8-575b-11df-963c-8fda34c8aa53">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="-1" strike="X"/>
+            <leg type="C" ratio="1" expiration_offset="+" strike="X"/>
+        </legs>
+    </combination>
+
+    <combination name="Put calendar spread" shortname="PCS" identifier="d6f9d20a-575b-11df-af6b-fb9ace19a2d8">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" strike="X"/>
+            <leg type="P" ratio="1" expiration_offset="+" strike="X"/>
+        </legs>
+    </combination>
+
+    <combination name="Call diagonal calendar spread" shortname="CDCS" identifier="d7263fe8-575b-11df-84fe-e9326bd90939">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="-1" strike="X"/>
+            <leg type="C" ratio="1" strike="Y" expiration_offset="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Put diagonal calendar spread" shortname="PDCS" identifier="d755e2f2-575b-11df-b8c9-cd1412e9dfb2">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" strike="X"/>
+            <leg type="P" ratio="1" strike="Y" expiration_offset="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Guts" shortname="G" identifier="d781b512-575b-11df-ad05-fbcf6661a2b7">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" expiration="X"/>
+            <leg type="P" ratio="1" strike_offset="+" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="2x1 ratio call spread" shortname="RCS" identifier="d7afce52-575b-11df-ba71-914fffe03048">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="-1" expiration="X"/>
+            <leg type="C" ratio="2" strike_offset="+" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="3x1 ratio call spread" shortname="RCS 3x1" identifier="0a13a7b4-4058-11e2-8b12-3e0a4c21765b">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="-1" expiration="X"/>
+            <leg type="C" ratio="3" strike_offset="+" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="1x2 ratio call spread" shortname="RCS 1x2" identifier="7fbbea36-24cd-11e2-baf8-9ed5f9fd6e3d">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" expiration="X"/>
+            <leg type="C" ratio="-2" strike_offset="+" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="1x3 ratio call spread" shortname="RCS 1x3" identifier="861c4e2a-24cd-11e2-923f-492bac84c799">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" expiration="X"/>
+            <leg type="C" ratio="-3" strike_offset="+" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="2x3 ratio call spread" shortname="RCS 2x3" identifier="86f597fa-71dc-11e2-bda3-c2529fa05804">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="2" expiration="X"/>
+            <leg type="C" ratio="-3" strike_offset="+" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="2x1 ratio put spread" shortname="RPS" identifier="d7da465a-575b-11df-a441-dba311f084fd">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" expiration="X"/>
+            <leg type="P" ratio="2" strike_offset="-" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="3x1 ratio put spread" shortname="RPS 3x1" identifier="167f3b1c-4058-11e2-8ed4-529af72e765a">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" expiration="X"/>
+            <leg type="P" ratio="3" strike_offset="-" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="1x2 ratio put spread" shortname="RPS 1x2" identifier="ea38fc3c-24cd-11e2-8130-2c7835671f71">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1" expiration="X"/>
+            <leg type="P" ratio="-2" strike_offset="-" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="1x3 ratio put spread" shortname="RPS 1x3" identifier="ef816c92-24cd-11e2-aebe-28de187c5fa5">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1" expiration="X"/>
+            <leg type="P" ratio="-3" strike_offset="-" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="2x3 ratio put spread" shortname="RPS 2x3" identifier="88fed8a4-71dc-11e2-a0b9-b301f88ea076">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="2" expiration="X"/>
+            <leg type="P" ratio="-3" strike_offset="-" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="Iron butterfly" shortname="IBF" identifier="d804fab2-575b-11df-b359-23fdb8cf86b0">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" expiration="X"/>
+            <leg type="P" ratio="1" strike_offset="+" expiration="X"/>
+            <leg type="C" ratio="1" strike_offset="+" expiration="X"/>
+            <leg type="C" ratio="-1" strike_offset="++" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="Combo" shortname="Co" identifier="d82ff0c8-575b-11df-ab8a-d7326a8338dc">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="-1" expiration="X"/>
+            <leg type="P" ratio="1" strike_offset="-" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="Strangle" shortname="St" identifier="d85aae8a-575b-11df-86af-69e65d689981">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1" expiration="X"/>
+            <leg type="C" ratio="1" strike_offset="+" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="Call ladder" shortname="CL" identifier="d880ac48-575b-11df-adaa-e9372fb32dad">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" expiration="X"/>
+            <leg type="C" ratio="-1" strike_offset="+" expiration="X"/>
+            <leg type="C" ratio="-1" strike_offset="++" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="Put ladder" shortname="PL" identifier="d8aef2b0-575b-11df-bace-b5cba375818e">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" expiration="X"/>
+            <leg type="P" ratio="-1" strike_offset="+" expiration="X"/>
+            <leg type="P" ratio="1" strike_offset="++" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="Straddle calendar spread" shortname="StrCS" identifier="d9070acc-575b-11df-84b7-33e39ac3eb9a">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" strike="X" expiration="X"/>
+            <leg type="C" ratio="-1" strike="X" expiration="X"/>
+            <leg type="P" ratio="1" strike="X" expiration_offset="+"/>
+            <leg type="C" ratio="1" strike="X" expiration_offset="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Diagonal straddle calendar spread" shortname="DStrCS" identifier="da3350fe-575b-11df-adbd-671ceb3b412c">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" strike="X" expiration="X"/>
+            <leg type="C" ratio="-1" strike="X" expiration="X"/>
+            <leg type="P" ratio="1" strike="Y" expiration_offset="+"/>
+            <leg type="C" ratio="1" strike="Y" expiration_offset="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Straddle" shortname="Str" identifier="da5a2620-575b-11df-9029-c3f2a99ff460">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1" strike="X" expiration="X"/>
+            <leg type="C" ratio="1" strike="X" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="Call condor" shortname="CCo" identifier="da84b6f6-575b-11df-ab0d-3f4d8e5f7559">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" expiration="X"/>
+            <leg type="C" ratio="-1" strike_offset="+" expiration="X"/>
+            <leg type="C" ratio="-1" strike_offset="++" expiration="X"/>
+            <leg type="C" ratio="1" strike_offset="+++" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="Put condor" shortname="PCo" identifier="e3f47ac4-69a7-11df-916f-a594496ed53e">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1" expiration="X"/>
+            <leg type="P" ratio="-1" strike_offset="+" expiration="X"/>
+            <leg type="P" ratio="-1" strike_offset="++" expiration="X"/>
+            <leg type="P" ratio="1" strike_offset="+++" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="Box" shortname="B" identifier="dab04d02-575b-11df-a1d4-f7d8a8a61767">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" strike="X" expiration="X"/>
+            <leg type="P" ratio="-1" strike="X" expiration="X"/>
+            <leg type="P" ratio="1" strike_offset="+" expiration="X"/>
+            <leg type="C" ratio="-1" strike_offset="+" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="Synthetic conversion-reversal" shortname="Synth C-R" identifier="db288010-575b-11df-a8e4-b9955814d526">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" strike="X" expiration="X"/>
+            <leg type="P" ratio="-1" strike="X" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="Fence" shortname="F" identifier="a1d6ef22-24cc-11e2-bbfb-9d41b819eeb7">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" expiration="X"/>
+            <leg type="P" ratio="-1" strike_offset="-" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="Iron condor" shortname="ICo" identifier="db6bcc08-575b-11df-bf3c-cbc75d213591">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" expiration="X"/>
+            <leg type="P" ratio="1" strike_offset="+" expiration="X"/>
+            <leg type="C" ratio="1" strike_offset="++" expiration="X"/>
+            <leg type="C" ratio="-1" strike_offset="+++" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="Call spread vs put" shortname="3-Way CSvP" identifier="dbb48c68-575b-11df-8f60-b7f400367baf">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" expiration="X"/>
+            <leg type="C" ratio="-1" strike_offset="+" expiration="X"/>
+            <leg type="P" ratio="-1" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="Put spread vs call" shortname="3-Way PSvC" identifier="dc18e0b4-575b-11df-b188-c59feaa63a84">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1" expiration="X"/>
+            <leg type="P" ratio="-1" strike_offset="-" expiration="X"/>
+            <leg type="C" ratio="-1" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="Straddle vs call" shortname="3-Way StrvC" identifier="dc63a1da-575b-11df-b3d0-b13c7ca30768">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1" strike="X" expiration="X"/>
+            <leg type="C" ratio="1" strike="X" expiration="X"/>
+            <leg type="C" ratio="-1" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="Straddle vs put" shortname="3-Way StrvP" identifier="d3f9f50c-575c-11df-b9a9-47a16437aad4">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1" strike="X" expiration="X"/>
+            <leg type="C" ratio="1" strike="X" expiration="X"/>
+            <leg type="P" ratio="-1" expiration="X"/>
+        </legs>
+    </combination>
+
+    <combination name="Call double" shortname="CD" identifier="cc582fde-71db-11e2-9cb8-71dc70e19108">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" expiration="X"/>
+            <leg type="C" ratio="1" expiration="X" strike_offset="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Put double" shortname="PD" identifier="d2827b3a-71db-11e2-827f-7bb96aeed8ce">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1" expiration="X"/>
+            <leg type="P" ratio="1" expiration="X" strike_offset="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Straddle strip" shortname="STrS" identifier="f3914366-71df-11e2-828e-fa5177e7d318">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" strike="X" expiration="X"/>
+            <leg type="P" ratio="1" strike="X" expiration="X"/>
+            <leg type="C" ratio="1" strike="X" expiration_offset="1q"/>
+            <leg type="P" ratio="1" strike="X" expiration_offset="1q"/>
+            <leg type="C" ratio="1" strike="X" expiration_offset="2q"/>
+            <leg type="P" ratio="1" strike="X" expiration_offset="2q"/>
+            <leg type="C" ratio="1" strike="X" expiration_offset="3q"/>
+            <leg type="P" ratio="1" strike="X" expiration_offset="3q"/>
+        </legs>
+    </combination>
+
+    <combination name="Options strip" shortname="OS" identifier="d8da1af8-575b-11df-b293-75f47d9296ce">   <!-- *** -->
+        <legs cardinality="more" mincount="3">
+            <leg type="O" ratio="1"/>
+        </legs>
+    </combination>
+
+    <combination name="2x3x2 Ratio Call Butterfly" shortname="CB232" identifier="52b15904-d60f-11e9-9e70-d35f11fcf204">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="2" expiration="X"/>
+            <leg type="C" ratio="-3" expiration="X" strike_offset="+"/>
+            <leg type="C" ratio="2" expiration="X" strike_offset="++"/>
+        </legs>
+    </combination>
+
+    <combination name="2x3x2 Ratio Put Butterfly" shortname="PB232" identifier="5d24103e-d60f-11e9-a780-a754448b24e1">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="2" expiration="X"/>
+            <leg type="P" ratio="-3" expiration="X" strike_offset="+"/>
+            <leg type="P" ratio="2" expiration="X" strike_offset="++"/>
+        </legs>
+    </combination>
+
+    <combination name="3x2 Ratio Put Spread" shortname="BR23" identifier="ac3619d8-d60f-11e9-9940-933356d52e71">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-2" expiration="X"/>
+            <leg type="P" ratio="3" expiration="X" strike_offset="-"/>
+        </legs>
+    </combination>
+
+    <combination name="3x2 Ratio Call Spread" shortname="BU23" identifier="e8943bee-d60f-11e9-a130-234d3ce1fd19">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="-2" expiration="X"/>
+            <leg type="C" ratio="3" expiration="X" strike_offset="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Straddle Fly" shortname="STDF" identifier="17e24ec2-d610-11e9-8900-fdfa41561f51">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" strike="X"/>
+            <leg type="P" ratio="1" strike="X"/>
+            <leg type="C" ratio="-2" strike="X" expiration_offset="+"/>
+            <leg type="P" ratio="-2" strike="X" expiration_offset="+"/>
+            <leg type="C" ratio="1" strike="X" expiration_offset="++"/>
+            <leg type="P" ratio="1" strike="X" expiration_offset="++"/>
+        </legs>
+    </combination>
+
+    <combination name="Risky Swap" shortname="RSWP" identifier="73f8df20-d613-11e9-acc0-25607308d734">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1"/>
+            <leg type="C" ratio="1" strike_offset="+"/>
+            <leg type="P" ratio="1" expiration_offset="+"/>
+            <leg type="C" ratio="-1" strike_offset="+" expiration_offset="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Call Spread Swap" shortname="BUSWP" identifier="57d57174-d617-11e9-9270-f28fc5476b8b">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1"/>
+            <leg type="C" ratio="-1" strike_offset="+"/>
+            <leg type="C" ratio="-1" expiration_offset="+"/>
+            <leg type="C" ratio="1" strike_offset="+" expiration_offset="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Put Spread Swap" shortname="BRSWP" identifier="d2a7717c-d617-11e9-8ac0-78bbde1ae1ee">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1"/>
+            <leg type="P" ratio="-1" strike_offset="-"/>
+            <leg type="P" ratio="-1" expiration_offset="+"/>
+            <leg type="P" ratio="1" strike_offset="-" expiration_offset="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Straddle swap" shortname="StrSW" identifier="0dccbf54-5288-11ea-b500-646921a68401">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" strike="X" expiration="X" />
+            <leg type="C" ratio="-1" strike="X" expiration="X" />
+            <leg type="P" ratio="1" strike="Y" expiration="X" />
+            <leg type="C" ratio="1" strike="Y" expiration="X" />
+        </legs>
+    </combination>
+
+    <!-- Delta neutral combinations, containing the underlying (future or stock). -->
+
+    <combination name="Call volatility trade" shortname="CVolT" identifier="d4705472-575c-11df-a24a-19059ce82a41">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Put volatility trade" shortname="PVol" identifier="d4e254f0-575c-11df-977e-a3da1431391a">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Call spread vs underlying" shortname="CSvU" identifier="d552985a-575c-11df-a6fb-a5d0d3804e38">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" expiration="X"/>
+            <leg type="C" ratio="-1" expiration="X" strike_offset="+"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Put spread vs underlying" shortname="PSvU" identifier="d5c00eb2-575c-11df-8b6a-b10cf42a451d">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1" expiration="X"/>
+            <leg type="P" ratio="-1" expiration="X" strike_offset="-"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Straddle vs buy underlying" shortname="StvbU" identifier="d6324220-575c-11df-9a29-0b66d65515d6">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1" expiration="X" strike="X"/>
+            <leg type="C" ratio="1" expiration="X" strike="X"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Straddle vs sell underlying" shortname="StvsU" identifier="d6a0fbde-575c-11df-aa15-6bb4d6d97a84">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1" expiration="X" strike="X"/>
+            <leg type="C" ratio="1" expiration="X" strike="X"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Strangle vs buy underlying" shortname="StrvbU" identifier="d70da4aa-575c-11df-bcd2-a73c367931cb">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1" expiration="X"/>
+            <leg type="C" ratio="1" expiration="X" strike_offset="+"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Strangle vs sell underlying" shortname="StrvsU" identifier="d76e8d74-575c-11df-b24c-a323e0ba1e89">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1" expiration="X"/>
+            <leg type="C" ratio="1" expiration="X" strike_offset="+"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Call spread vs sell put vs underlying" shortname="CSvPvU" identifier="d7dc15d8-575c-11df-905d-ed9e24470620">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" expiration="X"/>
+            <leg type="C" ratio="-1" expiration="X" strike_offset="+"/>
+            <leg type="P" ratio="-1" expiration="X"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Put spread vs sell call vs underlying" shortname="PSvCvU" identifier="d84e355a-575c-11df-b763-d308db7c0f96">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1" expiration="X"/>
+            <leg type="P" ratio="-1" expiration="X" strike_offset="-"/>
+            <leg type="C" ratio="-1" expiration="X"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Call ladder vs buy underlying" shortname="CLvbU" identifier="d8ba1626-575c-11df-9fb7-05b72b6fedcf">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" expiration="X"/>
+            <leg type="C" ratio="-1" expiration="X" strike_offset="+"/>
+            <leg type="C" ratio="-1" expiration="X" strike_offset="++"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Call ladder vs sell underlying" shortname="CLvsU" identifier="d92c9ac0-575c-11df-be27-e3e980864d7c">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" expiration="X"/>
+            <leg type="C" ratio="-1" expiration="X" strike_offset="+"/>
+            <leg type="C" ratio="-1" expiration="X" strike_offset="++"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Put ladder vs buy underlying" shortname="PLvbU" identifier="d9998900-575c-11df-80a5-950ba54fb119">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" expiration="X"/>
+            <leg type="P" ratio="-1" expiration="X" strike_offset="+"/>
+            <leg type="P" ratio="1" expiration="X" strike_offset="++"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Put ladder vs sell underlying" shortname="PLvsU" identifier="da01df8c-575c-11df-9360-7bcf62c9aac2">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" expiration="X"/>
+            <leg type="P" ratio="-1" expiration="X" strike_offset="+"/>
+            <leg type="P" ratio="1" expiration="X" strike_offset="++"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Combo vs underlying" shortname="CvU" identifier="da6e1b98-575c-11df-853b-5ddaf9880ab5">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="-1" expiration="X"/>
+            <leg type="P" ratio="1" expiration="X" strike_offset="-"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Call calendar spread vs buy underlying" shortname="CCSvbU" identifier="dade3e32-575c-11df-adcf-ad645cef97af">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="-1" strike="X"/>
+            <leg type="C" ratio="1" strike="X" expiration_offset="+" />
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Call calendar spread vs sell underlying" shortname="CCSvsU" identifier="db41619c-575c-11df-b741-3f32ccccbb26">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="-1" strike="X"/>
+            <leg type="C" ratio="1" strike="X" expiration_offset="+" />
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Put calendar spread vs buy underlying" shortname="PCSvbU" identifier="dba8dfe8-575c-11df-bf95-dde76e6420b7">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" strike="X"/>
+            <leg type="P" ratio="1" strike="X" expiration_offset="+" />
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Put calendar spread vs sell underlying" shortname="PCSvsU" identifier="48600454-575d-11df-bae4-0f52c8c94937">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" strike="X"/>
+            <leg type="P" ratio="1" strike="X" expiration_offset="+" />
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="2x1 ratio call spread vs buy underlying" shortname="RCSvbU" identifier="48d32c68-575d-11df-82b5-c3ec844b4544">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="-1" expiration="X"/>
+            <leg type="C" ratio="2" strike_offset="+" expiration="X"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="2x1 ratio call spread vs sell underlying" shortname="RCSvsU" identifier="494ec292-575d-11df-a267-e96a655a2a68">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="-1" expiration="X"/>
+            <leg type="C" ratio="2" strike_offset="+" expiration="X"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="2x1 ratio put spread vs buy underlying" shortname="RPSvbU" identifier="49cee7f6-575d-11df-b77e-c789229c6ec7">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" expiration="X"/>
+            <leg type="P" ratio="2" strike_offset="-" expiration="X"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="2x1 ratio put spread vs sell underlying" shortname="RPSvsU" identifier="4a416a42-575d-11df-9979-0741afb5dcb2">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" expiration="X"/>
+            <leg type="P" ratio="2" strike_offset="-" expiration="X"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Conversion-reversal" shortname="C-R" identifier="4aad0950-575d-11df-8e7d-213126f37438">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" strike="X" expiration="X"/>
+            <leg type="P" ratio="-1" strike="X" expiration="X"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Straddle calendar spread vs buy underlying" shortname="StrCSvbU" identifier="079e135a-673f-11e0-b848-56e685aa5647">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" strike="X" expiration="X"/>
+            <leg type="C" ratio="-1" strike="X" expiration="X"/>
+            <leg type="P" ratio="1" strike="X" expiration_offset="+"/>
+            <leg type="C" ratio="1" strike="X" expiration_offset="+"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Straddle calendar spread vs sell underlying" shortname="StrCSvsU" identifier="08601626-673f-11e0-9806-b13b3be4d7e2">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" strike="X" expiration="X"/>
+            <leg type="C" ratio="-1" strike="X" expiration="X"/>
+            <leg type="P" ratio="1" strike="X" expiration_offset="+"/>
+            <leg type="C" ratio="1" strike="X" expiration_offset="+"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Call diagonal calendar spread vs buy underlying" shortname="CDCSvbU" identifier="9b61ec14-673b-11e0-9223-cbb2491a61f6">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="-1" strike="X"/>
+            <leg type="C" ratio="1" strike="Y" expiration_offset="+"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Call diagonal calendar spread vs sell underlying" shortname="CDCSvsU" identifier="a2a3f710-673b-11e0-a30e-b5fdd2349174">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="-1" strike="X"/>
+            <leg type="C" ratio="1" strike="Y" expiration_offset="+"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Put diagonal calendar spread vs buy underlying" shortname="PDCSvbU" identifier="a7255810-673b-11e0-a9ae-45e719a6a710">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" strike="X"/>
+            <leg type="P" ratio="1" strike="Y" expiration_offset="+"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Put diagonal calendar spread vs sell underlying" shortname="PDCSvsU" identifier="ac4f7bfe-673b-11e0-86f3-65f344c77f11">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" strike="X"/>
+            <leg type="P" ratio="1" strike="Y" expiration_offset="+"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Guts vs buy underlying" shortname="GvbU" identifier="edd98306-673d-11e0-bf2a-3b59618df41b">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" expiration="X"/>
+            <leg type="P" ratio="1" strike_offset="+" expiration="X"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Guts vs sell underlying" shortname="GvsU" identifier="f6a0cb8e-673d-11e0-9d83-9477b038971f">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" expiration="X"/>
+            <leg type="P" ratio="1" strike_offset="+" expiration="X"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Call butterfly vs buy underlying" shortname="CBvbU" identifier="b0d59244-673b-11e0-a8bc-19778dfc8309">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" expiration="X"/>
+            <leg type="C" ratio="-2" expiration="X" strike_offset="+"/>
+            <leg type="C" ratio="1" expiration="X" strike_offset="++"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Call butterfly vs sell underlying" shortname="CBvsU" identifier="b5eb345a-673b-11e0-95d5-348e71aab397">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" expiration="X"/>
+            <leg type="C" ratio="-2" expiration="X" strike_offset="+"/>
+            <leg type="C" ratio="1" expiration="X" strike_offset="++"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Put butterfly vs buy underlying" shortname="PBvbU" identifier="badea97e-673b-11e0-9ae3-1559b2748b71">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1" expiration="X"/>
+            <leg type="P" ratio="-2" expiration="X" strike_offset="+"/>
+            <leg type="P" ratio="1" expiration="X" strike_offset="++"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Put butterfly vs sell underlying" shortname="PBvsU" identifier="c168bb22-673b-11e0-ab27-9a0350901e03">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1" expiration="X"/>
+            <leg type="P" ratio="-2" expiration="X" strike_offset="+"/>
+            <leg type="P" ratio="1" expiration="X" strike_offset="++"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Iron butterfly vs buy underlying" shortname="IBFvbU" identifier="c609e67e-673b-11e0-a189-7ec6e50244a3">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" expiration="X"/>
+            <leg type="P" ratio="1" strike_offset="+" expiration="X"/>
+            <leg type="C" ratio="1" strike_offset="+" expiration="X"/>
+            <leg type="C" ratio="-1" strike_offset="++" expiration="X"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Iron butterfly vs sell underlying" shortname="IBFvsU" identifier="cc3bf30c-673b-11e0-b75f-caaf290173d9">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" expiration="X"/>
+            <leg type="P" ratio="1" strike_offset="+" expiration="X"/>
+            <leg type="C" ratio="1" strike_offset="+" expiration="X"/>
+            <leg type="C" ratio="-1" strike_offset="++" expiration="X"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Diagonal straddle calendar spread vs buy underlying" shortname="DStrCSvbU" identifier="d10f4456-673b-11e0-987c-5a229ee213ad">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" strike="X" expiration="X"/>
+            <leg type="C" ratio="-1" strike="X" expiration="X"/>
+            <leg type="P" ratio="1" strike="Y" expiration_offset="+"/>
+            <leg type="C" ratio="1" strike="Y" expiration_offset="+"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Diagonal straddle calendar spread vs sell underlying" shortname="DStrCSvsU" identifier="d6d85d00-673b-11e0-bb1a-2eff4ae226b1">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" strike="X" expiration="X"/>
+            <leg type="C" ratio="-1" strike="X" expiration="X"/>
+            <leg type="P" ratio="1" strike="Y" expiration_offset="+"/>
+            <leg type="C" ratio="1" strike="Y" expiration_offset="+"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Call condor vs buy underlying" shortname="CCovbU" identifier="db73a7ac-673b-11e0-b9eb-da4e94ef7e0c">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" expiration="X"/>
+            <leg type="C" ratio="-1" strike_offset="+" expiration="X"/>
+            <leg type="C" ratio="-1" strike_offset="++" expiration="X"/>
+            <leg type="C" ratio="1" strike_offset="+++" expiration="X"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Call condor vs sell underlying" shortname="CCovsU" identifier="e02e4a2c-673b-11e0-9019-0990e42c840c">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" expiration="X"/>
+            <leg type="C" ratio="-1" strike_offset="+" expiration="X"/>
+            <leg type="C" ratio="-1" strike_offset="++" expiration="X"/>
+            <leg type="C" ratio="1" strike_offset="+++" expiration="X"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Put condor vs buy underlying" shortname="PCovbU" identifier="e62fe4e4-673b-11e0-b393-5a8af0edac7a">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1" expiration="X"/>
+            <leg type="P" ratio="-1" strike_offset="+" expiration="X"/>
+            <leg type="P" ratio="-1" strike_offset="++" expiration="X"/>
+            <leg type="P" ratio="1" strike_offset="+++" expiration="X"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Put condor vs sell underlying" shortname="PCovsU" identifier="eb859826-673b-11e0-ba21-4ba6b29bd06e">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1" expiration="X"/>
+            <leg type="P" ratio="-1" strike_offset="+" expiration="X"/>
+            <leg type="P" ratio="-1" strike_offset="++" expiration="X"/>
+            <leg type="P" ratio="1" strike_offset="+++" expiration="X"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Iron condor vs buy underlying" shortname="ICovbU" identifier="efe6690e-673b-11e0-8702-7bb4a871b929">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" expiration="X"/>
+            <leg type="P" ratio="1" strike_offset="+" expiration="X"/>
+            <leg type="C" ratio="1" strike_offset="++" expiration="X"/>
+            <leg type="C" ratio="-1" strike_offset="+++" expiration="X"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Iron condor vs sell underlying" shortname="ICovsU" identifier="f3f6992e-673b-11e0-b642-b69bcabc0bed">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1" expiration="X"/>
+            <leg type="P" ratio="1" strike_offset="+" expiration="X"/>
+            <leg type="C" ratio="1" strike_offset="++" expiration="X"/>
+            <leg type="C" ratio="-1" strike_offset="+++" expiration="X"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Fence vs sell underlying" shortname="FvsU" identifier="e6872a50-7e79-11e6-91d0-753ff5baa8fb">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" expiration="X"/>
+            <leg type="P" ratio="-1" strike_offset="-" expiration="X"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Straddle Fly versus Long Underlying" shortname="STDF+U" identifier="83b38596-d618-11e9-af50-b55ffde069e4">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" strike="X"/>
+            <leg type="P" ratio="1" strike="X"/>
+            <leg type="C" ratio="-2" strike="X" expiration_offset="+"/>
+            <leg type="P" ratio="-2" strike="X" expiration_offset="+"/>
+            <leg type="C" ratio="1" strike="X" expiration_offset="++"/>
+            <leg type="P" ratio="1" strike="X" expiration_offset="++"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Straddle Fly versus Short Underlying" shortname="STDF-U" identifier="1d1018f8-d619-11e9-81b0-e020efedb2bf">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1" strike="X"/>
+            <leg type="P" ratio="1" strike="X"/>
+            <leg type="C" ratio="-2" strike="X" expiration_offset="+"/>
+            <leg type="P" ratio="-2" strike="X" expiration_offset="+"/>
+            <leg type="C" ratio="1" strike="X" expiration_offset="++"/>
+            <leg type="P" ratio="1" strike="X" expiration_offset="++"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="2x3x2 Ratio Call Butterfly versus long Underlying" shortname="CB232+U" identifier="27fe01d4-d61a-11e9-afa0-1498443d0605">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="2" expiration="X"/>
+            <leg type="C" ratio="-3" expiration="X" strike_offset="+"/>
+            <leg type="C" ratio="2" expiration="X" strike_offset="++"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="2x3x2 Ratio Call Butterfly versus short Underlying" shortname="CB232-U" identifier="9f45ae9a-d61a-11e9-89d0-9172dade6fde">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="2" expiration="X"/>
+            <leg type="C" ratio="-3" expiration="X" strike_offset="+"/>
+            <leg type="C" ratio="2" expiration="X" strike_offset="++"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="2x3x2 Ratio Put Butterfly versus Long Underlying" shortname="PB232+U" identifier="a63ff2d2-d61a-11e9-aa80-98618ff12710">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="2" expiration="X"/>
+            <leg type="P" ratio="-3" expiration="X" strike_offset="+"/>
+            <leg type="P" ratio="2" expiration="X" strike_offset="++"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="2x3x2 Ratio Put Butterfly versus Short Underlying" shortname="PB232-U" identifier="ac005dec-d61a-11e9-9dd0-4da497e46877">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="2" expiration="X"/>
+            <leg type="P" ratio="-3" expiration="X" strike_offset="+"/>
+            <leg type="P" ratio="2" expiration="X" strike_offset="++"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="3x2 Ratio Put Spread Long Underlying" shortname="BR23+U" identifier="afe04daa-d61a-11e9-9b70-6f7cbaf4641e">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-2" expiration="X"/>
+            <leg type="P" ratio="3" expiration="X" strike_offset="-"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="3x2 Ratio Put Spread Short Underlying" shortname="BR23-U" identifier="b4a5e58e-d61a-11e9-93d0-0c166ee87d94">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-2" expiration="X"/>
+            <leg type="P" ratio="3" expiration="X" strike_offset="-"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="3x2 Ratio Call Spread Long Underlying" shortname="BU23+U" identifier="ba02d7f8-d61a-11e9-b240-5c348771993e">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="-2" expiration="X"/>
+            <leg type="C" ratio="3" expiration="X" strike_offset="+"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="3x2 Ratio Call Spread Short Underlying" shortname="BU23-U" identifier="c3a5d59e-d61a-11e9-95f0-83b04df63725">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="-2" expiration="X"/>
+            <leg type="C" ratio="3" expiration="X" strike_offset="+"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Call Spread Swap versus Long Underlying" shortname="BUSWP+U" identifier="c8a07266-d61a-11e9-bf60-890a9da8041e">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1"/>
+            <leg type="C" ratio="-1" strike_offset="+"/>
+            <leg type="C" ratio="-1" expiration_offset="+"/>
+            <leg type="C" ratio="1" strike_offset="+" expiration_offset="+"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Call Spread Swap versus Short Underlying" shortname="BUSWP-U" identifier="cd08d7da-d61a-11e9-9860-65c755a35707">
+        <legs cardinality="fixed">
+            <leg type="C" ratio="1"/>
+            <leg type="C" ratio="-1" strike_offset="+"/>
+            <leg type="C" ratio="-1" expiration_offset="+"/>
+            <leg type="C" ratio="1" strike_offset="+" expiration_offset="+"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Put Spread Swap versus Long Underlying" shortname="BRSWP+U" identifier="d0ddec60-d61a-11e9-b460-6afa587a7212">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1"/>
+            <leg type="P" ratio="-1" strike_offset="-"/>
+            <leg type="P" ratio="-1" expiration_offset="+"/>
+            <leg type="P" ratio="1" strike_offset="-" expiration_offset="+"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Put Spread Swap versus Short Underlying" shortname="BRSWP-U" identifier="d5484354-d61a-11e9-89b0-3205afbe756c">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="1"/>
+            <leg type="P" ratio="-1" strike_offset="-"/>
+            <leg type="P" ratio="-1" expiration_offset="+"/>
+            <leg type="P" ratio="1" strike_offset="-" expiration_offset="+"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+    <combination name="Risky Swap versus Long Underlying" shortname="RSWP+U" identifier="d97055b6-d61a-11e9-ac30-8b3686a5bca2">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1"/>
+            <leg type="C" ratio="1" strike_offset="+"/>
+            <leg type="P" ratio="1" expiration_offset="+"/>
+            <leg type="C" ratio="-1" strike_offset="+" expiration_offset="+"/>
+            <leg type="U" ratio="+"/>
+        </legs>
+    </combination>
+
+    <combination name="Risky Swap versus Short Underlying" shortname="RSWP-U" identifier="df635d7e-d61a-11e9-b210-e1d79e1bd2d8">
+        <legs cardinality="fixed">
+            <leg type="P" ratio="-1"/>
+            <leg type="C" ratio="1" strike_offset="+"/>
+            <leg type="P" ratio="1" expiration_offset="+"/>
+            <leg type="C" ratio="-1" strike_offset="+" expiration_offset="+"/>
+            <leg type="U" ratio="-"/>
+        </legs>
+    </combination>
+
+</combinations>
