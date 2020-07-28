@@ -1,4 +1,3 @@
-![Monte Carlo Pi CI](https://github.com/itiviti-cpp-master/monte-carlo-pi/workflows/Monte%20Carlo%20Pi%20CI/badge.svg)
 # Приблизительное вычисление значения Pi методом Монте-Карло
 
 ## Идея
